@@ -226,6 +226,43 @@ class HighorLow
 {
     public static void main(String[] args)
     {
+        Scanner in = new Scanner(System.in);
+        Random gen = new Random();
+        int numGuess = 0;
+        int randomVal = gen.nextInt(10) + 1;
+        boolean done = false;
+        String trash = "";
 
+        do {
+            System.out.print("\nThis program generates a random integer between 1 and 10. \nYou have one guess at what number is generated. Enter your guess here: ");
+
+            if(in.hasNextInt())
+            {
+                numGuess = in.nextInt();
+                in.nextLine();
+
+                if (numGuess >= 1 && numGuess <= 10)
+                {
+                    done = true;
+                } else {
+                    System.out.println("Please enter an integer value between 1 and 10. You entered: " + numGuess + ".");
+                }
+            } else {
+                trash = in.nextLine();
+                System.out.println("\nPlease enter an integer value between 1 and 10. You entered: " + trash + ".");
+            }
+        }while (!done);
+
+
+        System.out.println("\nThe random number generated was: " + randomVal);
+
+        if (numGuess > randomVal)
+        {
+            System.out.println("\nYour guess was higher than the random value generated.");
+        } else if (numGuess < randomVal) {
+            System.out.println("\nYour guess was lower than the random value generated.");
+        } else {
+            System.out.println("\nYour guess was exactly right!");
+        }
     }
 }
