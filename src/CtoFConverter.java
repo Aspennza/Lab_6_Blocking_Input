@@ -152,7 +152,71 @@ class RectangleInfo
 {
     public static void main(String[] args)
     {
+        Scanner in = new Scanner(System.in);
+        double rectangleWidth = 0.00;
+        double rectangleHeight = 0.00;
+        double rectangleArea = 0.00;
+        double rectanglePerimeter = 0.00;
+        double rectangleDiagonal = 0.00;
+        boolean done1 = false;
+        boolean done2 = false;
+        String trash = "";
 
+        do
+        {
+            System.out.print("\nPlease enter the width of your rectangle: ");
+
+            if (in.hasNextDouble())
+            {
+                rectangleWidth = in.nextDouble();
+                in.nextLine();
+
+                if (rectangleWidth > 0)
+                {
+                    done1 = true;
+                } else {
+                    System.out.println("\nPlease enter a positive value. You entered: " + rectangleWidth + ".");
+                }
+
+            } else {
+                trash = in.nextLine();
+                System.out.println("\nPlease enter a numeric value. You entered: " + trash + ".");
+            }
+        }while (!done1);
+
+        do
+        {
+            System.out.print("\nPlease enter the height of your rectangle: ");
+
+            if (in.hasNextDouble())
+            {
+                rectangleHeight = in.nextDouble();
+                in.nextLine();
+
+                if (rectangleHeight > 0)
+                {
+                    done2 = true;
+                } else {
+                    System.out.println("\nPlease enter a positive value. You entered: " + rectangleHeight + ".");
+                }
+
+            } else {
+                trash = in.nextLine();
+                System.out.println("\nPlease enter a numeric value. You entered: " + trash + ".");
+            }
+        }while (!done2);
+
+        rectangleArea = rectangleHeight * rectangleWidth;
+
+        System.out.println("\nThe area of your rectangle is " + rectangleArea + " units.");
+
+        rectanglePerimeter = (rectangleHeight * 2) + (rectangleWidth * 2);
+
+        System.out.println("\nThe perimeter of your rectangle is " + rectanglePerimeter + " units.");
+
+        rectangleDiagonal = Math.sqrt((Math.pow(rectangleHeight, 2) + Math.pow(rectangleWidth, 2)));
+
+        System.out.println("\nThe length of the diagonal of your rectangle is " + rectangleDiagonal + " units.");
 
     }
 }
