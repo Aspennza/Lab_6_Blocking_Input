@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class CtoFConverter
@@ -221,3 +222,10 @@ class RectangleInfo
     }
 }
 
+class HighorLow
+{
+    public static void main(String[] args)
+    {
+
+    }
+}
